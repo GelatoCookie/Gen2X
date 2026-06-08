@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Larger blue gradient background to fill the icon, slightly bigger -->
+    <path
+        android:pathData="M54,-4a58,58 0 1,0 0.1,0z"
+        android:fillColor="#2196F3"/>
+    <path
+        android:pathData="M54,-4a58,58 0 1,0 0.1,0z"
+        android:fillColor="#42A5F5"
+        android:fillAlpha="0.5"/>
+    <!-- Drop shadow -->
+    <path
+        android:pathData="M54,104a50,10 0 1,0 0.1,0z"
+        android:fillColor="#22000000"
+        android:fillAlpha="0.4"/>
+    <!-- Simpler, more readable 'Gen2X' using geometric shapes -->
+    <!-- G -->
+    <path android:pathData="M28,54 Q28,30 54,30 Q80,30 80,54 Q80,78 54,78 Q28,78 28,54 M54,54 L80,54" android:strokeColor="#FFF" android:strokeWidth="6"/>
+    <!-- e -->
+    <path android:pathData="M32,84 Q32,70 54,70 Q76,70 76,84 Q76,98 54,98 Q32,98 32,84 M32,84 L76,84" android:strokeColor="#FFF" android:strokeWidth="6"/>
+    <!-- n -->
+    <path android:pathData="M80,98 L80,70 Q80,70 98,70 Q106,70 106,84 Q106,98 98,98 Q80,98 80,84" android:strokeColor="#FFF" android:strokeWidth="6"/>
+    <!-- 2 -->
+    <path android:pathData="M38,104 Q54,90 70,104 Q86,118 54,118 Q22,118 38,104" android:strokeColor="#FFF" android:strokeWidth="6"/>
+    <!-- X -->
+    <path android:pathData="M80,38 L104,62 M104,38 L80,62" android:strokeColor="#FFF" android:strokeWidth="6"/>
+    <!-- Sparkle accent -->
+    <path
+        android:pathData="M90,24 l2,6 l6,2 l-6,2 l-2,6 l-2,-6 l-6,-2 l6,-2 z"
+        android:fillColor="#FFFDE047"/>
+</vector>

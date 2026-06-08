@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text_wrap"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="8dp">
+
+    <CheckBox
+        android:id="@+id/item_checkbox"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <TextView
+        android:id="@+id/tag_data_epc"
+        style="@style/style_inventory_list_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="start"
+        android:hyphenationFrequency="none"
+        android:text="AAAABBBBCCCCDDDDEEEEFFFF" />
+
+    <TextView
+        android:id="@+id/tag_seen_count"
+        style="@style/style_inventory_list_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="12345" />
+
+    <TextView
+        android:id="@+id/tag_rssi"
+        style="@style/style_inventory_list_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.75"
+        android:gravity="center_horizontal"
+        android:text="-45" />
+
+    <TextView
+        android:id="@+id/read_per_sec"
+        style="@style/style_inventory_list_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center_horizontal"
+        android:text="12345" />
+
+</LinearLayout>

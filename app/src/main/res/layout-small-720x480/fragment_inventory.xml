@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Inventory.InventoryFragment">
+
+    <!-- Top Filter Row -->
+    <LinearLayout
+        android:id="@+id/layout_filter_row_1"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layout_filter_row_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/quiet_timer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:background="@android:drawable/edit_text"
+                android:gravity="left|center"
+                android:hint="Quiet timer"
+                android:inputType="number"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_quiet"
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="wrap_content"
+                android:text="Quiet"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="40dp"
+                android:backgroundTint="#90CAF9"
+                android:textColor="#222222" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/checkbox_unquiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/text_unquiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Un-quiet"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/layout_filter_row_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layout_filter_row_2"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_filter_row_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <CheckBox
+                android:id="@+id/checkbox_fast_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/text_fast_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FastID"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <CheckBox
+                android:id="@+id/checkbox_focus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/text_focus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Focus"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/layout_filter_row_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Header Row -->
+    <LinearLayout
+        android:id="@+id/layout_header_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_filter_row_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <CheckBox
+            android:id="@+id/select_all"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="1dp"
+            android:background="@drawable/select_all_checkbox_bg"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:text="All"
+           />
+
+        <TextView
+            android:id="@+id/tag_data_epc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="EPC TAG ID"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tag_seen_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Count"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tag_rssi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="RSSI"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/read_per_sec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Read/sec"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/layout_header_row"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- ListView -->
+
+
+    <ListView
+        android:id="@+id/inventoryList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/layout_header_row"
+        app:layout_constraintBottom_toTopOf="@id/color_counters"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/color_counters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:background="@drawable/bg_color_counter_overlay"
+        android:elevation="6dp"
+        android:gravity="center"
+        android:layout_marginBottom="59dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inventoryList"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/yellow_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y: 0"
+            android:textColor="@color/darker_yellow"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/green_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G: 0"
+            android:textColor="@color/dark_green"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/lgrey_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GREY: 0"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/white_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="W: 0"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Bottom Overlay -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/overlay_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Unique Tag Count + Timer -->
+
+        <!-- Clear Screen -->
+
+        <LinearLayout
+            android:id="@+id/info_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/unique_tag_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unique tags : 00"
+                android:textColor="@color/dark_grey"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timer_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Timer 00:00"
+                android:textColor="@color/dark_grey"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_inventory"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.431"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
+        <TextView
+            android:id="@+id/unique_tag_per_10_sec"
+            android:layout_width="75dp"
+            android:layout_height="53dp"
+            android:text="New Unique tags every 10s : 00"
+            android:textColor="@color/dark_grey"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_clear_screen"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toEndOf="@+id/fab_inventory" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_clear_screen"
+            android:layout_width="50dp"
+            android:layout_height="56dp"
+            app:icon="@android:drawable/ic_menu_delete"
+            app:iconTint="#000000"
+            android:backgroundTint="#90CAF9"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<LinearLayout
+    android:id="@+id/inventory_custom_timer_layout"
+    android:layout_width="130dp"
+    android:layout_height="36dp"
+    android:layout_marginBottom="59dp"
+    android:orientation="horizontal"
+    android:layout_marginStart="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/inventoryList"
+    app:layout_constraintStart_toStartOf="parent"
+
+    tools:layout_editor_absoluteX="16dp">
+
+
+    <EditText
+        android:id="@+id/inventory_stop_timer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@android:drawable/edit_text"
+        android:gravity="center"
+        android:hint="Inventorystop timer"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textSize="12sp" />
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.customImpinj.TagProtectFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:cardElevation="8dp"
+        app:contentPadding="4dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow style="@style/table_row_layout_style_small">
+
+                <AutoCompleteTextView
+                    android:id="@+id/et_mask"
+                    android:layout_width="match_parent"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/edit_text"
+                    android:digits="0123456789ABCDEFabcdef"
+                    android:gravity="center"
+                    android:hint="@string/tag_pattern_title"
+                    android:inputType="text|textCapCharacters" />
+            </TableRow>
+
+            <TableRow style="@style/table_row_layout_style_small">
+
+                <TextView
+                    style="@style/style_small_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="30"
+                    android:text="@string/protect_mode" />
+
+                <ImageButton
+                    android:id="@+id/mode_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="10"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Required values"
+                    android:src="@android:drawable/ic_dialog_info" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/protect_mode_spinner"
+                    style="@style/style_default_spinner"
+                    android:layout_margin="0dp"
+                    android:layout_weight="70"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:popupBackground="@android:drawable/spinner_background" />
+            </TableRow>
+
+
+            <TableRow style="@style/table_row_layout_style_small">
+
+                <TextView
+                    style="@style/style_small_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/protect_password" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="0dp"
+                    android:layout_weight="70"
+                    android:background="@android:drawable/edit_text"
+                    android:digits="0123456789ABCDEF"
+                    android:gravity="center"
+                    android:hint="@string/password_hint"
+                    android:maxLength="8"
+                    android:text="" />
+            </TableRow>
+
+            <!-- Two checkboxes with two text views below password EditText -->
+            <!--            <TableRow style="@style/table_row_layout_style_small"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginBottom="20dp">-->
+
+            <!--                <CheckBox-->
+            <!--                    android:id="@+id/checkEnableVisibility"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/enableVisibility"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginEnd="16dp"-->
+            <!--                    android:text="@string/enableVisibility" />-->
+
+            <!--                <CheckBox-->
+            <!--                    android:id="@+id/checkDisableVisibility"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/disableVisibility"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="@string/disableVisibility" />-->
+            <!--            </TableRow>-->
+
+            <Button
+                android:id="@+id/button_performOp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/performOp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

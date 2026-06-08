@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_connect">
+
+    <fragment
+        android:id="@+id/nav_connect"
+        android:name="com.example.newgen2xplay.ui.connect.ConnectFragment"
+        android:label="@string/menu_connect"
+        tools:layout="@layout/fragment_connect" />
+
+    <fragment
+        android:id="@+id/nav_inventory"
+        android:name="com.example.newgen2xplay.ui.Inventory.InventoryFragment"
+        android:label="@string/inventory"
+        tools:layout="@layout/fragment_inventory" />
+
+    <fragment
+        android:id="@+id/nav_singulation"
+        android:name="com.example.newgen2xplay.ui.Singulation.SingulationFragment"
+        android:label="@string/title_singulation"
+        tools:layout="@layout/fragment_singulation" />
+
+    <fragment
+        android:id="@+id/nav_prefilter"
+        android:name="com.example.newgen2xplay.ui.Filters.PreFiltersFragment"
+        android:label="@string/title_prefilter"
+        tools:layout="@layout/fragment_prefilters" />
+
+    <fragment
+        android:id="@+id/nav_custom_tagquiet"
+        android:name="com.example.newgen2xplay.ui.customImpinj.TagQuietCustomFragment"
+        android:label="@string/title_custom_tagquiet"
+        tools:layout="@layout/fragment_custom_tagquiet" />
+
+    <fragment
+        android:id="@+id/nav_tag_protect"
+        android:name="com.example.newgen2xplay.ui.customImpinj.TagProtectFragment"
+        android:label="@string/title_tagProtect"
+        tools:layout="@layout/fragment_tag_protect" />
+
+
+</navigation>

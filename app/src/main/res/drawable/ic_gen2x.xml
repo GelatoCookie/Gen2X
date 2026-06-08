@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Circular gradient background -->
+    <group>
+        <path
+            android:name="circle_bg"
+            android:pathData="M54,4a50,50 0 1,0 0.1,0z"
+            android:fillColor="#2196F3"/>
+        <path
+            android:name="circle_gradient"
+            android:pathData="M54,4a50,50 0 1,0 0.1,0z"
+            android:fillColor="#42A5F5"
+            android:fillAlpha="0.5"/>
+    </group>
+    <!-- Drop shadow -->
+    <group>
+        <path
+            android:name="shadow"
+            android:pathData="M54,104a50,10 0 1,0 0.1,0z"
+            android:fillColor="#22000000"
+            android:fillAlpha="0.4"/>
+    </group>
+    <!-- Gen2X text with white outline -->
+    <group>
+        <path
+            android:name="text_outline"
+            android:pathData="M24,72 h60 v-36 h-60 z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.7"/>
+        <path
+            android:name="text_bg"
+            android:pathData="M28,68 h52 v-28 h-52 z"
+            android:fillColor="#2196F3"/>
+        <path
+            android:name="text"
+            android:pathData="M34,62 h40 v-16 h-40 z"
+            android:fillColor="#FFFFFF"/>
+    </group>
+    <!-- Sparkle accent -->
+    <group>
+        <path
+            android:name="sparkle"
+            android:pathData="M90,24 l2,6 l6,2 l-6,2 l-2,6 l-2,-6 l-6,-2 l6,-2 z"
+            android:fillColor="#FFFDE047"/>
+    </group>
+    <!-- Note: For actual text, use PNG or SVG with text rendered, as Android vector does not support <text> -->
+</vector>
+
