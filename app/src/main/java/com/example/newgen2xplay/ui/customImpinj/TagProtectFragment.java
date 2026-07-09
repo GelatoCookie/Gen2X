@@ -38,6 +38,13 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class TagProtectFragment extends Fragment {
 
+    /**
+     * Access password (Gen2 RESERVED bank, words 2-3) used to gain access to the
+     * tag. 0 means "no access password set" (open access), which is the default
+     * state of an unlocked tag.
+     */
+    private static final long DEFAULT_ACCESS_PASSWORD = 0L;
+
     private TagProtectViewModel mViewModel;
     private FragmentTagProtectBinding binding;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -57,8 +64,11 @@ public class TagProtectFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        // Drop any queued UI updates so worker callbacks don't touch a null binding.
+        mainHandler.removeCallbacksAndMessages(null);
         binding = null;
-        executor.shutdown();
+        // Interrupt any in-flight reader op instead of silently rejecting future work.
+        executor.shutdownNow();
     }
 
 
@@ -213,7 +223,7 @@ public class TagProtectFragment extends Fragment {
                 }
                 TagAccess tagAccess = new TagAccess();
                 TagAccess.ReadAccessParams readAccessParams = tagAccess.new ReadAccessParams();
-                readAccessParams.setAccessPassword(Long.decode("00" ));
+                readAccessParams.setAccessPassword(DEFAULT_ACCESS_PASSWORD);
                 readAccessParams.setCount(2);
                 readAccessParams.setMemoryBank(MEMORY_BANK.MEMORY_BANK_RESERVED);
                 readAccessParams.setOffset(2);
@@ -234,6 +244,9 @@ public class TagProtectFragment extends Fragment {
                     return;
                 }
                 mainHandler.post(() -> {
+                            if (binding == null || !isAdded()) {
+                                return;
+                            }
                             if (tagData.get().getOpStatus() == ACCESS_OPERATION_STATUS.ACCESS_SUCCESS) {
                                 Toast.makeText(requireContext(),  "Read Success", Toast.LENGTH_SHORT).show();
                                 binding.etPassword.setText(tagData.get().getMemoryBankData());
@@ -251,7 +264,7 @@ public class TagProtectFragment extends Fragment {
                 TagAccess tagAccess = new TagAccess();
                 TagAccess.WriteAccessParams writeAccessParams = tagAccess.new WriteAccessParams();
                 String writeData = password ;
-                writeAccessParams.setAccessPassword(Long.decode("00" ));
+                writeAccessParams.setAccessPassword(DEFAULT_ACCESS_PASSWORD);
                 writeAccessParams.setMemoryBank(MEMORY_BANK.MEMORY_BANK_RESERVED);
                 writeAccessParams.setOffset(2);
                 writeAccessParams.setWriteData(writeData);
